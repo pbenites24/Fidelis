@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   
+   
+   <!-- CSS -->
+<style type="text/css">
+table, td, tr, th {
+		border-width: thin;
+		border-style: solid;
+		border-color: gray;
+      overflow: auto;
+}
+
+th {
+   background: #b3b3b3;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+th, td {
+    padding: 10px;
+}
+
+tr:hover {
+	background: #00FFFF;
+	}
+
+ div.row {
+        border: 1px solid;
+      }
+
+.col-border {
+        border: 1px solid; 
+}
+
+a:link {
+    color: blue; 
+    text-decoration: underline;
+}
+
+
+
+</style>
+   
+   <script>
+    
+   var data = [
+    {
+      "ALERT_ID": "1361418",
+      "ALERT_TIME": "2017-01-27 14:34:11",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "GOOGLEMAIL",
+      "CLIENT_IP": "10.1.1.165",
+      "DEST_IP": "10.1.1.165",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361417",
+      "ALERT_TIME": "2017-01-27 14:34:11",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "GOOGLEMAIL",
+      "CLIENT_IP": "10.1.1.165",
+      "DEST_IP": "10.1.1.165",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361416",
+      "ALERT_TIME": "2017-01-27 14:34:10",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "GOOGLEMAIL",
+      "CLIENT_IP": "10.1.1.165",
+      "DEST_IP": "10.1.1.165",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361415",
+      "ALERT_TIME": "2017-01-27 14:34:10",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "GOOGLEMAIL",
+      "CLIENT_IP": "10.1.1.165",
+      "DEST_IP": "10.1.1.165",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361411",
+      "ALERT_TIME": "2017-01-27 14:33:14",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361410",
+      "ALERT_TIME": "2017-01-27 14:33:05",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361409",
+      "ALERT_TIME": "2017-01-27 14:33:05",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361408",
+      "ALERT_TIME": "2017-01-27 14:33:04",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361407",
+      "ALERT_TIME": "2017-01-27 14:33:04",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361406",
+      "ALERT_TIME": "2017-01-27 14:32:54",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.153",
+      "DEST_IP": "10.1.1.153",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361405",
+      "ALERT_TIME": "2017-01-27 14:32:53",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361404",
+      "ALERT_TIME": "2017-01-27 14:32:52",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361403",
+      "ALERT_TIME": "2017-01-27 14:32:52",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361394",
+      "ALERT_TIME": "2017-01-27 14:32:15",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361393",
+      "ALERT_TIME": "2017-01-27 14:32:15",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361392",
+      "ALERT_TIME": "2017-01-27 14:32:14",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.153",
+      "DEST_IP": "10.1.1.153",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361387",
+      "ALERT_TIME": "2017-01-27 14:30:35",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361386",
+      "ALERT_TIME": "2017-01-27 14:30:35",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361385",
+      "ALERT_TIME": "2017-01-27 14:30:30",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361384",
+      "ALERT_TIME": "2017-01-27 14:30:30",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361383",
+      "ALERT_TIME": "2017-01-27 14:30:30",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361382",
+      "ALERT_TIME": "2017-01-27 14:30:30",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.124",
+      "DEST_IP": "10.1.1.124",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361381",
+      "ALERT_TIME": "2017-01-27 14:30:27",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361380",
+      "ALERT_TIME": "2017-01-27 14:30:27",
+      "SEVERITY": "Low",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "10.1.1.163",
+      "DEST_IP": "10.1.1.163",
+      "RULE_NAME": "FSS_BitTorrent File"
+    },
+    {
+      "ALERT_ID": "1361379",
+      "ALERT_TIME": "2017-01-27 13:34:51",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.165.204",
+      "DEST_IP": "166.91.165.204",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361378",
+      "ALERT_TIME": "2017-01-27 13:34:50",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.3.32",
+      "DEST_IP": "166.91.3.32",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361377",
+      "ALERT_TIME": "2017-01-27 13:34:49",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.5.199",
+      "DEST_IP": "166.91.5.199",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361376",
+      "ALERT_TIME": "2017-01-27 13:34:48",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.3.32",
+      "DEST_IP": "166.91.3.32",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361375",
+      "ALERT_TIME": "2017-01-27 13:34:46",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.132.61",
+      "DEST_IP": "166.91.132.61",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361374",
+      "ALERT_TIME": "2017-01-27 13:34:46",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361357",
+      "ALERT_TIME": "2017-01-27 13:34:46",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "HTTP",
+      "CLIENT_IP": "166.91.176.192",
+      "DEST_IP": "166.91.176.192",
+      "RULE_NAME": "FSS_Suspicious Login Page"
+    },
+    {
+      "ALERT_ID": "1361373",
+      "ALERT_TIME": "2017-01-27 13:34:44",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361372",
+      "ALERT_TIME": "2017-01-27 13:34:43",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361371",
+      "ALERT_TIME": "2017-01-27 13:34:43",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.5.129",
+      "DEST_IP": "166.91.5.129",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361368",
+      "ALERT_TIME": "2017-01-27 13:34:41",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.36.78",
+      "DEST_IP": "166.91.36.78",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361369",
+      "ALERT_TIME": "2017-01-27 13:34:40",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361366",
+      "ALERT_TIME": "2017-01-27 13:34:39",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.5.129",
+      "DEST_IP": "166.91.5.129",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361365",
+      "ALERT_TIME": "2017-01-27 13:34:39",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.132.61",
+      "DEST_IP": "166.91.132.61",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361364",
+      "ALERT_TIME": "2017-01-27 13:34:39",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361363",
+      "ALERT_TIME": "2017-01-27 13:34:38",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.84.50",
+      "DEST_IP": "166.91.84.50",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361362",
+      "ALERT_TIME": "2017-01-27 13:34:36",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.18.200",
+      "DEST_IP": "166.91.18.200",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361361",
+      "ALERT_TIME": "2017-01-27 13:34:36",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.132.61",
+      "DEST_IP": "166.91.132.61",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361360",
+      "ALERT_TIME": "2017-01-27 13:34:36",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.84.50",
+      "DEST_IP": "166.91.84.50",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361359",
+      "ALERT_TIME": "2017-01-27 13:34:35",
+      "SEVERITY": "Low",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Webmail Login Page"
+    },
+    {
+      "ALERT_ID": "1361358",
+      "ALERT_TIME": "2017-01-27 13:34:35",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.99.66",
+      "DEST_IP": "166.91.99.66",
+      "RULE_NAME": "FSS_Suspicious Login Page"
+    },
+    {
+      "ALERT_ID": "1361356",
+      "ALERT_TIME": "2017-01-27 13:34:34",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.18.200",
+      "DEST_IP": "166.91.18.200",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361355",
+      "ALERT_TIME": "2017-01-27 13:34:34",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.84.50",
+      "DEST_IP": "166.91.84.50",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    },
+    {
+      "ALERT_ID": "1361354",
+      "ALERT_TIME": "2017-01-27 13:34:34",
+      "SEVERITY": "Low",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.70.67",
+      "DEST_IP": "166.91.70.67",
+      "RULE_NAME": "FSS_Webmail Login Page"
+    },
+    {
+      "ALERT_ID": "1361353",
+      "ALERT_TIME": "2017-01-27 13:34:34",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.70.67",
+      "DEST_IP": "166.91.70.67",
+      "RULE_NAME": "FSS_Suspicious Login Page"
+    },
+    {
+      "ALERT_ID": "1361352",
+      "ALERT_TIME": "2017-01-27 13:34:34",
+      "SEVERITY": "Medium",
+      "PROTOCOL": "YAHOOMAIL",
+      "CLIENT_IP": "166.91.96.231",
+      "DEST_IP": "166.91.96.231",
+      "RULE_NAME": "FSS_Inbound Email with Suspicious JavaScript in HTML"
+    }
+  ];
+    
+   </script>
+</head>
+<body>
+    
+    <div class="container-fluid">
+            <div class="row">
+        <div class="col-sm-1 col">
+        <p><strong>ALERTS</strong></p>
+        </div>
+        <div class="col-sm-11 col">
+        <p><strong><a href="url">METADATA</a></strong></p>
+        </div>
+      </div>
+            
+    <div class="row">
+        <div class="col-sm-1">
+        <p>GROUP BYS</p>
+         <br>
+         <p>CLIENT IPS</p>
+         <p><input id="checkBox" type="checkbox"> 10.11.654</p>
+         <p><input id="checkBox" type="checkbox"> 10.11.826</p>
+         <p><input id="checkBox" type="checkbox"> 10.11.125</p>
+         <br>
+         <p>DEST IP</p>
+          <p><input id="checkBox" type="checkbox"> 10.11.654</p>
+         <p><input id="checkBox" type="checkbox"> 10.11.826</p>
+         <p><input id="checkBox" type="checkbox"> 10.11.125</p>        
+        </div>        
+         <div class="col-sm-8">
+    <div id="data_table"></div>
+    </div>
+         <div class="col-sm-3">
+        <p>ALERT DETAILS</p>
+        <br>
+        <p>ALERT_ID</p>
+        <p>123456</p>
+        <br>
+        <p>ALERT TIME</p>
+        <p>2017-01-27 14:34:11</p>
+        <br>
+        <p>SEVERITY</p>
+        <p>MEDIUM</p>
+        <br>
+        <p>PROTOCOL</p>
+        <p>GOOGLEMAIL</p>
+        <br>
+        <p>CLIENT_IP</p>
+        <p>10.022.552</p>
+        <br>
+        <p>DEST_IP</p>
+        <p>10.022.552</p>
+         <br>
+        <p>RULE_NAME</p>
+        <p>FSS_Inbound Email with suspicious JS</p>
+        
+        </div>
+    </div>
+</body>
+
+<script>
+    
+  var findme = document.getElementById("data_table");
+  
+  //CREATE TABLE
+	var tbl = document.createElement("table");   
+	var tbdy = document.createElement("tbody"); 
+	findme.appendChild(tbl); 
+	tbl.appendChild(tbdy);
+   
+   //CREATE HEADER ROW WITH KEYS
+	var htr = document.createElement("tr");
+	for (var h = 0; h < 7; h++){
+		var hcol = document.createElement('th');
+		htr.appendChild(hcol);
+		var hdata = document.createTextNode(Object.keys(data[0])[h]);
+		hcol.appendChild(hdata);
+	}
+	tbdy.appendChild(htr);
+    
+    //COLUMNS AND ROWS
+    for (var i = 0; i < data.length; i++){
+		var row = document.createElement('tr'); //<tr>
+		tbdy.appendChild(row);
+		for (var j = 0; j < 7; j++) {
+			var col = document.createElement('td'); //<td>
+			row.appendChild(col);
+			var data1 = document.createTextNode(Object.values(data[i])[j]); 
+			col.appendChild(data1);
+		}
+		
+	}
+	
+	
+	
+
+    
+</script>
+
+
+</html>
