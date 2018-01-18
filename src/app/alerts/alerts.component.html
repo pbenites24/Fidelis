@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-2">
+    <h1>Filters</h1>
+  </div>
+  <div class="col-xs-7">
+      <h1>Alerts</h1>
+      
+      <table class="table table-striped">
+          <tr>
+            <th>ALERT_ID</th>
+            <th>ALERT_TIME</th>
+            <th>SEVERITY</th>
+            <th>PROTOCOL</th>
+            <th>CLIENT_IP</th>
+            <th>DEST_IP</th>
+            <th>RULE_NAME</th>
+          </tr>
+          <tr *ngFor="let alert of alerts" >
+            <td>{{alert.ALERT_ID}}</td>
+            <td>{{alert.ALERT_TIME}}</td>
+            <td>{{alert.SEVERITY}}</td>
+            <td>{{alert.PROTOCOL}}</td>
+            <td>{{alert.CLIENT_IP}}</td>
+            <td>{{alert.DEST_IP}}</td>
+            <td>{{alert.RULE_NAME}}</td>
+          </tr>
+        </table>
+  </div>
+  <div class="col-xs-3">
+    <h1>Details</h1>
+  </div>
+</div>
+
+

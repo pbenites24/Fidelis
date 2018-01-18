@@ -1,0 +1,34 @@
+table, td, tr, th {
+    border-width: thin;
+    border-style: solid;
+    border-color: gray;
+  overflow: auto;
+}
+
+th {
+background: #b3b3b3;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+th, td {
+padding: 10px;
+}
+
+tr:hover {
+background: #00FFFF;
+}
+
+div.row {
+    border: 1px solid;
+  }
+
+.col-border {
+    border: 1px solid; 
+}
+
+a:link {
+color: blue; 
+text-decoration: underline;
+}

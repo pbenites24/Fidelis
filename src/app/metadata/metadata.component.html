@@ -1,0 +1,23 @@
+<div class="row">
+        <div class="col-xs-2">
+          <h1>Filters</h1>
+        </div>
+        <div class="col-xs-7">
+            <h1>Metadata</h1>
+            
+            <table class="table table-striped">
+            
+                <tr *ngFor="let metadata of metadata" >
+                  <td>{{metadata.ClientIP}}</td>
+                  <td>{{metadata.ServerIP}}</td>
+
+                </tr>
+              </table>
+        </div>
+        <div class="col-xs-3">
+          <h1>Details</h1>
+        </div>
+      </div>
+      
+      
+      
